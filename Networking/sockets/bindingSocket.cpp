@@ -8,6 +8,7 @@ HDE::bindingSocket::bindingSocket(int domain,int service,int protocol,int port,u
 }
 
 //definition of connect_to_network virtual function
+//Binding the socket to a port and an IP or interface
 int HDE::bindingSocket::connect_to_network(int sock,struct sockaddr_in address)
 {
   return bind(sock, (struct sockaddr *)&address,sizeof(address));
