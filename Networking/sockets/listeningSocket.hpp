@@ -6,7 +6,7 @@
 #include "bindingSocket.hpp"
 namespace HDE
 {
-  class listeningSocket:bindingSocket
+  class listeningSocket:public bindingSocket
   {
     private:
       int backlog;
@@ -14,7 +14,10 @@ namespace HDE
     public:
       listeningSocket(int domain,int service,int protocol,int port, u_long interface,int bklog);
       void start_Listening();
-
+    
+      //getter functions
+      int get_listening();
+      int get_backlog();
   };
       
 }
